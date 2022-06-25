@@ -14,3 +14,5 @@ This repository contains the source code for the [Building Modern Web Applicatio
 
 ## Text tutorial
 You can find a text version of the tutorial in the [Vaadin Documentation](https://vaadin.com/docs/latest/flow/tutorials/in-depth-course).
+
+Deployed on Heroku: https://max-crm-test-v1.herokuapp.com/
