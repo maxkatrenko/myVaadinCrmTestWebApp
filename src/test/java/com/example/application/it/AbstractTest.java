@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractTest extends ParallelTest {
     private static final String SERVER_HOST = IPAddress.findSiteLocalAddress();
     private static final int SERVER_PORT = 8080;
+    private final String route;
 
     static {
         // Prevent debug logging from Apache HTTP client
@@ -21,21 +22,9 @@ public abstract class AbstractTest extends ParallelTest {
         root.setLevel(Level.INFO);
     }
 
-    private final String route;
-    @Rule
-    public ScreenshotOnFailureRule rule = new ScreenshotOnFailureRule(this, true);
-
-    protected AbstractTest(String route) {
-        this.route = route;
-    }
-
     @BeforeClass
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
-    }
-
-    private static String getURL(String route) {
-        return String.format("http://%s:%d/%s", SERVER_HOST, SERVER_PORT, route);
     }
 
     @Before
@@ -43,4 +32,15 @@ public abstract class AbstractTest extends ParallelTest {
         super.setup();
         getDriver().get(getURL(route)); // Opens the given URL in the browser
     }
+
+    protected AbstractTest(String route) {
+        this.route = route;
+    }
+
+    private static String getURL(String route) {
+        return String.format("http://%s:%d/%s", SERVER_HOST, SERVER_PORT, route);
+    }
+
+    @Rule
+    public ScreenshotOnFailureRule rule = new ScreenshotOnFailureRule(this, true);
 }

@@ -35,6 +35,7 @@ public class MainLayout extends AppLayout {
         header.addClassNames("py-0", "px-m");
 
         addToNavbar(header);
+
     }
 
     private void createDrawer() {
