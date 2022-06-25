@@ -12,24 +12,24 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    // Set default security policy that permits Vaadin internal requests and
-    // denies all other
-    super.configure(http);
-    setLoginView(http, LoginView.class, "/logout");
-  }
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // Set default security policy that permits Vaadin internal requests and
+        // denies all other
+        super.configure(http);
+        setLoginView(http, LoginView.class, "/logout");
+    }
 
-  @Override
-  public void configure(WebSecurity web) throws Exception {
-    super.configure(web);
-    web.ignoring().antMatchers("/images/**");
-  }
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        super.configure(web);
+        web.ignoring().antMatchers("/images/**");
+    }
 
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("katrin").password("{noop}katrinpass").roles("USER");
-    auth.inMemoryAuthentication().withUser("vadim").password("{noop}vadimpass").roles("USER");
-    auth.inMemoryAuthentication().withUser("artur").password("{noop}arturpass").roles("USER");
-  }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("katrin").password("{noop}katrinpass").roles("USER");
+        auth.inMemoryAuthentication().withUser("vadim").password("{noop}vadimpass").roles("USER");
+        auth.inMemoryAuthentication().withUser("artur").password("{noop}arturpass").roles("USER");
+    }
 }
