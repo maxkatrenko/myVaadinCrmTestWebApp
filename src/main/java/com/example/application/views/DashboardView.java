@@ -14,7 +14,7 @@ import com.vaadin.flow.router.Route;
 import javax.annotation.security.PermitAll;
 
 @Route(value = "dashboard", layout = MainLayout.class)
-@PageTitle("Dashboard | Vaadin CRM")
+@PageTitle("Dashboard | Max's Test CRM")
 @PermitAll
 public class DashboardView extends VerticalLayout {
     private final CrmService service;

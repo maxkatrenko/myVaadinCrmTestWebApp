@@ -28,6 +28,8 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("user").password("{noop}userpass").roles("USER");
+    auth.inMemoryAuthentication().withUser("katrin").password("{noop}katrinpass").roles("USER");
+    auth.inMemoryAuthentication().withUser("vadim").password("{noop}vadimpass").roles("USER");
+    auth.inMemoryAuthentication().withUser("artur").password("{noop}arturpass").roles("USER");
   }
 }
