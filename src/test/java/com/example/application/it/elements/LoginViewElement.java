@@ -16,5 +16,4 @@ public class LoginViewElement extends VerticalLayoutElement {
         // Return true if we end up on another page
         return !$(LoginViewElement.class).onPage().exists();
     }
-
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import java.net.*;
 import java.io.*;
 import java.nio.channels.*;
@@ -26,7 +27,7 @@ public class MavenWrapperDownloader {
      * provided.
      */
     private static final String DEFAULT_DOWNLOAD_URL = "https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/"
-            + WRAPPER_VERSION + "/maven-wrapper-" + WRAPPER_VERSION + ".jar";
+        + WRAPPER_VERSION + "/maven-wrapper-" + WRAPPER_VERSION + ".jar";
 
     /**
      * Path to the maven-wrapper.properties file, which might contain a downloadUrl
@@ -80,7 +81,7 @@ public class MavenWrapperDownloader {
         if (!outputFile.getParentFile().exists()) {
             if (!outputFile.getParentFile().mkdirs()) {
                 System.out.println(
-                        "- ERROR creating output directory '" + outputFile.getParentFile().getAbsolutePath() + "'");
+                    "- ERROR creating output directory '" + outputFile.getParentFile().getAbsolutePath() + "'");
             }
         }
         System.out.println("- Downloading to: " + outputFile.getAbsolutePath());
@@ -114,5 +115,4 @@ public class MavenWrapperDownloader {
         fos.close();
         rbc.close();
     }
-
 }

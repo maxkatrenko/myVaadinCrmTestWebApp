@@ -1,8 +1,8 @@
 package com.example.application.views.list;
 
-import com.example.application.data.entity.Company;
+import javax.annotation.security.PermitAll;
+
 import com.example.application.data.entity.Contact;
-import com.example.application.data.entity.Status;
 import com.example.application.data.service.CrmService;
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.button.Button;
@@ -12,17 +12,14 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.security.PermitAll;
-
-
 @Component
 @Scope("prototype")
-@Route(value="", layout = MainLayout.class)
+@Route(value = "", layout = MainLayout.class)
 @PageTitle("Contacts | Max's Test CRM")
 @PermitAll
 public class ListView extends VerticalLayout {
@@ -116,6 +113,4 @@ public class ListView extends VerticalLayout {
     private void updateList() {
         grid.setItems(service.findAllContacts(filterText.getValue()));
     }
-
-
 }

@@ -1,11 +1,10 @@
 package com.example.application.data.entity;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.example.application.data.AbstractEntity;
 import org.hibernate.annotations.Formula;
@@ -37,7 +36,7 @@ public class Company extends AbstractEntity {
         this.employees = employees;
     }
 
-    public int getEmployeeCount(){
+    public int getEmployeeCount() {
         return employeeCount;
     }
 }

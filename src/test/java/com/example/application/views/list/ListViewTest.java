@@ -29,7 +29,8 @@ public class ListViewTest {
         Assert.assertTrue(form.isVisible());
         Assert.assertEquals(firstContact.getFirstName(), form.firstName.getValue());
     }
+
     private Contact getFirstItem(Grid<Contact> grid) {
-        return( (ListDataProvider<Contact>) grid.getDataProvider()).getItems().iterator().next();
+        return ((ListDataProvider<Contact>) grid.getDataProvider()).getItems().iterator().next();
     }
 }
